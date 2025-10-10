@@ -33,6 +33,7 @@ while heroi.esta_vivo() and goblin.esta_vivo():
     if goblin.esta_vivo():
         goblin.atacar(heroi)
 
+
 if heroi.esta_vivo():
     print(f"{heroi.nome} derrotou o {goblin.nome}!")
     heroi.ganhar_experiencia(50)

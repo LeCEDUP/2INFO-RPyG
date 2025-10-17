@@ -15,3 +15,7 @@ def introducao():
     print("Você é um caçador de demônios em treinamento na Corporação dos Caçadores.")
     print("Seu objetivo: eliminar os demônios que ameaçam os humanos durante a noite.")
     print("Prepare sua espada Nichirin e sua respiração.\n")
+
+def mostrar_status(heroi):
+    print(f"\n💠 {heroi.nome} | Vida: {heroi.vida} | Ataque: {heroi.ataque} | Defesa: {heroi.defesa} | Nível: {heroi.nivel}")
+    print(f"Inventário: {[item.nome for item in heroi.inventario]}\n")

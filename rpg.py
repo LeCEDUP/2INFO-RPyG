@@ -35,3 +35,15 @@ def main():
     demonio_filho = Monstro("Demônio Menor", 40, 8, 3, "Fraco")
     demonio_lua_inferior = Monstro("Lua Inferior Seis", 90, 15, 6, "Médio")
     demonio_lua_superior = Monstro("Akaza - Lua Superior Três", 200, 25, 10, "Poderoso")
+
+    pausa("\n🌲 Você entra em uma floresta sombria à noite...")
+    pausa("Um Demônio Menor surge do escuro e ataca!")
+
+    batalha(heroi, demonio_filho)
+    if not heroi.esta_vivo():
+        fim_de_jogo(heroi)
+        return
+
+    heroi.ganhar_experiencia(50)
+    pausa("Você encontra uma nova Poção de Recuperação e guarda no inventário.")
+    heroi.inventario.append(Item("Poção de Recuperação", "Restaura 30 de vida."))

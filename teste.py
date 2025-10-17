@@ -57,4 +57,4 @@ if heroi.esta_vivo():
 else:
     print(f"\n{heroi.nome} foi derrotado pelo {dragao.nome}. Fim de jogo.")
 
-print("\n--- Fim da Aventura ---")
+

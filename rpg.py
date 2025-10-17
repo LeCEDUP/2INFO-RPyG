@@ -3,7 +3,7 @@ import random
 import time
 
 # Barbie vs Draculaura - A Batalha pelo Mundo Rosa 
-# Feito com muito glitter ✨
+# Feito com muito glitter 
 
 
 # CLASSE DOS PERSONAGENS
@@ -29,8 +29,6 @@ class Personagem:
 def introducao():
     print(" Bem-vindo(a) ao RPG: Barbie vs Draculaura ")
     time.sleep(1)
-    print("O Mundo Rosa está em perigo! ")
-    time.sleep(1)
     print("Barbie e Draculaura estão brigando pra ver quem manda no mundo rosa!")
     time.sleep(2)
     print("\nEscolha o seu lado...\n")
@@ -50,7 +48,7 @@ def escolher_personagem():
         jogador = Personagem("Draculaura", 100, 18)
         inimigo = Personagem("Barbie", 100, 20)
 
-    print(f"\nVocê escolheu {jogador.nome}! Que comece o brilho... ou a escuridão! \n")
+    print(f"\nVocê escolheu {jogador.nome}! Que comece o brilho...! \n")
     time.sleep(1)
     return jogador, inimigo
 
@@ -88,7 +86,7 @@ def batalha(jogador, inimigo):
     if jogador.esta_vivo():
         print(f"\n {jogador.nome} venceu e agora domina o Mundo Rosa! ")
     else:
-        print(f"\n {inimigo.nome} venceu... O rosa agora é sombrio e cheio de estilo gótico. ")
+        print(f"\n {inimigo.nome} venceu... O rosa agora é sombrio, mas com seu toque rosa . ")
 
 
 
@@ -100,6 +98,3 @@ def jogar():
     print("\n Fim de jogo \n")
 
 jogar()
-
-
-

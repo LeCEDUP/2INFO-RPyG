@@ -23,7 +23,9 @@ def criar_heroi():
 	heroi.dinheiro = 100
 	heroi.veiculo = None
 	return heroi
-if monstro(nivel=1, tipo='Bandido'):
+
+
+def criar_monstro(nivel=1, tipo='Bandido'):
 	return Monstro(nome=f"{tipo} N{nivel}", vida=20 + nivel * 10, ataque=5 + nivel * 2, defesa=1 + nivel, tipo=tipo)
 
 

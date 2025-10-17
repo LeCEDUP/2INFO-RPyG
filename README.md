@@ -1,5 +1,16 @@
 # RPyG
 
+### Quick start - GTA-lite text game
+Run `rpg.py` to play the small GTA-inspired text RPG included in this project.
+
+On Windows PowerShell:
+
+```powershell
+python rpg.py
+```
+
+Follow on-screen prompts to create a hero, explore, fight bandidos, buy vehicles and gear.
+
 Este exercício tem como objetivo praticar os conceitos fundamentais da Programação Orientada a Objetos (POO) em Python, utilizando um cenário de jogo de RPG (Role-Playing Game).
 
 ![Dragões.jpg](dragoes.jpg)

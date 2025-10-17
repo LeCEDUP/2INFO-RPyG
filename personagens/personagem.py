@@ -8,13 +8,16 @@ class Personagem:
         self.defesa = defesa
         
     def atacar(self, alvo):
-        if  random.randint(1, 10) == 1:
-            dano = max(0, self.ataque - alvo.defesa)
-            self.ataque_critico(alvo, dano)
+        if random.randint(1, 5) == 1:
+            print(f"{self.nome} errou o ataque no {alvo.nome}")
         else:
-            dano = max(0, self.ataque - alvo.defesa)
-            print(f"{self.nome} atacou {alvo.nome} causando {dano} de dano.")
-            alvo.receber_dano(dano)
+            if  random.randint(1, 15) == 1:
+                dano = max(0, self.ataque - alvo.defesa)
+                self.ataque_critico(alvo, dano)
+            else:
+                dano = max(0, self.ataque - alvo.defesa)
+                print(f"{self.nome} atacou {alvo.nome} causando {dano} de dano.")
+                alvo.receber_dano(dano)
 
     def receber_dano(self, dano):
         self.vida -= dano

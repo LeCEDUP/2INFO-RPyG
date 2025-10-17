@@ -59,3 +59,14 @@ def main():
     bandana = Armadura("Bandana da Perseverança", "Símbolo dos caçadores veteranos.", 3)
     heroi.inventario.append(bandana)
     heroi.equipar_item(bandana)
+        pausa("\n🔥 O ar fica pesado... Akaza surge diante de você!")
+    pausa("Akaza sorri e diz: 'Mostre-me sua força, Caçador!'")
+
+    batalha(heroi, demonio_lua_superior)
+    if heroi.esta_vivo():
+        pausa(f"\n🎉 {heroi.nome} derrotou Akaza, a Lua Superior Três!")
+        pausa("Você se torna um Pilar (Hashira) da Corporação dos Caçadores!")
+        heroi.ganhar_experiencia(300)
+        print("\n🏆 Fim da Jornada. Você se tornou uma lenda entre os caçadores.")
+    else:
+        fim_de_jogo(heroi)

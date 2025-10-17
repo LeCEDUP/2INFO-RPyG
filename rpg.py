@@ -16,6 +16,16 @@ def introducao():
     print("Seu objetivo: eliminar os demônios que ameaçam os humanos durante a noite.")
     print("Prepare sua espada Nichirin e sua respiração.\n")
 
-def mostrar_status(heroi):
-    print(f"\n💠 {heroi.nome} | Vida: {heroi.vida} | Ataque: {heroi.ataque} | Defesa: {heroi.defesa} | Nível: {heroi.nivel}")
-    print(f"Inventário: {[item.nome for item in heroi.inventario]}\n")
+def main():
+    introducao()
+
+    nome = input("Digite o nome do seu caçador: ")
+    heroi = Heroi(nome, 100, 15, 5)
+
+     espada_nichirin = Arma("Espada Nichirin", "Espada forjada com minério especial, eficaz contra demônios.", 10)
+    uniforme = Armadura("Uniforme da Corporação", "Protege contra ataques e cortes.", 5)
+    poção_vida = Item("Poção de Recuperação", "Restaura 30 de vida.")
+
+    heroi.inventario.extend([espada_nichirin, uniforme, poção_vida])
+    heroi.equipar_item(espada_nichirin)
+    heroi.equipar_item(uniforme)

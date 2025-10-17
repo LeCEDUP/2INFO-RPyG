@@ -15,9 +15,9 @@ goblin = Monstro("", 30, 8, 2, "Pequeno")
 dragao = Monstro("Dragão", 200, 30, 10, "Grande")
 
 # Criando itens
-espada = Arma("Varinha", "Uma espada afiada.", 10)
-escudo = Armadura("Protego", "Um escudo resistente.", 5)
-pocao_vida = Item("Poção de Vida", "Restaura 30 de vida.")
+espada = Arma("Varinha", "Uma varinha que é designada para cada bruxo.", 10)
+escudo = Armadura("Protego", "Um feitiço que cria um escudo.", 5)
+pocao_vida = Item("Poção Wiggenweld", "Restaura 30 de vida.")
 
 print("--- Início da Aventura ---")
 

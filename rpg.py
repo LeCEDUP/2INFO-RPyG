@@ -47,3 +47,15 @@ def main():
     heroi.ganhar_experiencia(50)
     pausa("Você encontra uma nova Poção de Recuperação e guarda no inventário.")
     heroi.inventario.append(Item("Poção de Recuperação", "Restaura 30 de vida."))
+
+    pausa("\n💀 A lua brilha forte... surge uma das Luas Inferiores!")
+    batalha(heroi, demonio_lua_inferior)
+    if not heroi.esta_vivo():
+        fim_de_jogo(heroi)
+        return
+
+    heroi.ganhar_experiencia(100)
+    pausa("Você encontrou a 'Bandana da Perseverança' (+3 defesa).")
+    bandana = Armadura("Bandana da Perseverança", "Símbolo dos caçadores veteranos.", 3)
+    heroi.inventario.append(bandana)
+    heroi.equipar_item(bandana)

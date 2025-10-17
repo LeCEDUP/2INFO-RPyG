@@ -29,3 +29,9 @@ def main():
     heroi.inventario.extend([espada_nichirin, uniforme, poção_vida])
     heroi.equipar_item(espada_nichirin)
     heroi.equipar_item(uniforme)
+
+     pausa(f"\n{heroi.nome} iniciou sua jornada com a {espada_nichirin.nome} e o {uniforme.nome} equipados!")
+
+    demonio_filho = Monstro("Demônio Menor", 40, 8, 3, "Fraco")
+    demonio_lua_inferior = Monstro("Lua Inferior Seis", 90, 15, 6, "Médio")
+    demonio_lua_superior = Monstro("Akaza - Lua Superior Três", 200, 25, 10, "Poderoso")

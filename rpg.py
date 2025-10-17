@@ -70,3 +70,39 @@ def main():
         print("\n🏆 Fim da Jornada. Você se tornou uma lenda entre os caçadores.")
     else:
         fim_de_jogo(heroi)
+
+def batalha(heroi, inimigo):
+    while heroi.esta_vivo() and inimigo.esta_vivo():
+        print(f"\n{heroi.nome}: {heroi.vida} HP | {inimigo.nome}: {inimigo.vida} HP")
+        print("1. Atacar")
+        print("2. Usar Poção")
+        acao = input("Escolha sua ação: ")
+
+        if acao == "1":
+            heroi.atacar(inimigo)
+        elif acao == "2":
+            usar_pocao(heroi)
+        else:
+            print("Ação inválida.")
+
+        if inimigo.esta_vivo():
+            inimigo.atacar(heroi)
+
+
+def usar_pocao(heroi):
+    for item in heroi.inventario:
+        if item.nome.startswith("Poção"):
+            heroi.vida += 30
+            heroi.inventario.remove(item)
+            print(f"{heroi.nome} usou {item.nome}. Vida atual: {heroi.vida}")
+            return
+    print("Você não tem poções disponíveis!")
+
+
+def fim_de_jogo(heroi):
+    print(f"\n💀 {heroi.nome} foi derrotado... o ciclo da noite continua.")
+    print("⚔️ Fim de jogo.")
+
+
+if __name__ == "__main__":
+    main()

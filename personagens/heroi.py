@@ -3,11 +3,13 @@ from itens.arma import Arma
 from itens.armadura import Armadura
 
 class Heroi(Personagem):
+    herois = []
     def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None):
         super().__init__(nome, vida, ataque, defesa)
         self.nivel = nivel
         self.experiencia = experiencia
         self.inventario = inventario if inventario is not None else []
+        Heroi.herois.append(self)
 
     def ganhar_experiencia(self, exp):
         self.experiencia += exp

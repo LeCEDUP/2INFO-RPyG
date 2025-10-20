@@ -42,7 +42,7 @@ herois = Heroi.herois
 # Inimigos
 storm_strooper = Inimigo("Stormtrooper", 55, 10, 3, "Soldado Imperial", 110)
 death_trooper = Inimigo("Deathtrooper", 75, 40, 6, "Soldado Imperial", 250)
-lorde_sith = Inimigo("Lorde Sith", 170, 120, 8, "Lorde Sith", 800)
+lorde_sith = Inimigo("Lorde Sith", 170, 80, 8, "Lorde Sith", 800)
 
 inimigos = Inimigo.inimigos
 
@@ -141,12 +141,33 @@ def jogo():
     if heroi.esta_vivo():
         if batalha(heroi, encontrar_inimigo(heroi, death_trooper)):
             pausa(1)
-            print(f"Em breve mais...")
+            print(f"Após derrotar o deathtrooper, {heroi.nome} avista uma arma e uma armadura no chão. \n")
+            pausa(1)
+            encontrar_item(heroi, "armas")
+            pausa(0.5)
+            encontrar_item(heroi, "armaduras")
+            print(f"{heroi.nome} avista a porta de saída no final de um longo corredor.\n")
+            pausa(1)
+            print(f"{heroi.nome}: Preciso fugir agora!\n")
+            pausa(0.5)
+            print(f"Para a infelicidade de {heroi.nome} surge das sombras uma figura escura, vestindo trajes negros.\n")
+            pausa(2)
+            print(f"\n Dessa figura se observa um objeto metálico que logo se revela um sabre de luz vermelho, a cor pertencente aos lordes sith. \n")
+            pausa(2)
         else:
             pausa(1)
             print(f"Mesmo com garra, {heroi.nome} é derrotado por um soldado imperial, esse é o fim da história de nosso herói.")
             
-
+    if heroi.esta_vivo():
+        if batalha(heroi, encontrar_inimigo(heroi, lorde_sith)):
+            print(f"{heroi.nome} com muita perseverança e habilidade consegue escapar da nave imperial. \n")
+            pausa(1)
+            print(f"Um final digno à história de {heroi.nome}.")
+            pausa(2)
+            print("Fim.")
+        else:
+            pausa(1)
+            print(f"Por mais que {heroi.nome} estivesse perto de escapar, ele foi derrotado por um {lorde_sith.nome}, esse é o triste fim da história de nosso herói.")
 
 
 # Main

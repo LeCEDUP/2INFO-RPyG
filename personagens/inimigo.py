@@ -1,6 +1,6 @@
-from .personagem import Personagem
+from .protagonista import Personagem
 
-class Monstro(Personagem):
+class inimigo(Personagem):
     def __init__(self, nome, vida, ataque, defesa, tipo):
         super().__init__(nome, vida, ataque, defesa)
         self.tipo = tipo

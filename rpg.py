@@ -107,4 +107,31 @@ def escolher_itens(nome_categoria, opcoes):
             continue
         escolhas.append(item)
     return escolhas
-      
+
+def sortear_itens():
+    armas_possiveis = [
+        Arma("Batom Laser", random.randint(10, 18), random.randint(1, 4)),
+        Arma("Secador Explosivo", random.randint(11, 19), random.randint(2, 5)),
+        Arma("Salto da Justiça", random.randint(8, 15), random.randint(1, 3)),
+        Arma("Escova Reluzente", random.randint(9, 17), random.randint(1, 4)),
+        Arma("Pincel Mágico", random.randint(7, 14), random.randint(1, 3))
+    ]
+
+    armaduras_possiveis = [
+        Armadura("Vestido Brilhante", random.randint(4, 8)),
+        Armadura("Casaco Fashion", random.randint(3, 7)),
+        Armadura("Jaqueta Rosa de Poder", random.randint(5, 9)),
+        Armadura("Saia de Diamante", random.randint(4, 8)),
+        Armadura("Capa da Elegância", random.randint(4, 9))
+    ]
+
+    superpoderes_possiveis = [
+        "Bola de Glitter",
+        "Invisibilidade Fashion",
+        "Raio Rosa",
+        "Teletransporte Glamouroso",
+        "Chicote de Confete"
+    ]
+
+    return armas_possiveis, armaduras_possiveis, superpoderes_possiveis
+     

@@ -94,3 +94,8 @@ for inimigo in inimigos:
                     print(f"{heroi.nome} usou {item.nome}. Vida atual: {heroi.vida}")
                 else:
                     print("Escolha inválida! Você perdeu o turno.")
+
+        if inimigo.esta_vivo():
+            inimigo.atacar(heroi)
+            
+

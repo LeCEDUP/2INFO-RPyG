@@ -13,3 +13,9 @@ def introducao():
     print(maiorfrase)
     print("Equipe-se, lute e proteja Hogwarts")
     print("="*len(maiorfrase))
+
+def menu_principal():
+    print("\nMENU PRINCIPAL")
+    print("1 - Iniciar Jogo")
+    print("2 - Sair")
+    return input("Escolha uma opção: ")

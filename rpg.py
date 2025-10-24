@@ -32,5 +32,35 @@ def menu_principal():
     print("1 - Iniciar Aventura\n2 - Sair\n3 - Ver Introdução")
     return input("Escolha: ")
 
+class Heroi:
+    ...
+    def atacar(self, inimigo):
+        dano_bruto = random.randint(self.ataque - 3, self.ataque + 3)
+        dano_real = max(dano_bruto - inimigo.defesa, 0)
+        if random.random() < 0.15:
+            dano_real = int(dano_real * 1.8)
+            print("✨ CRÍTICO GLAMOUR ✨")
+        inimigo.vida = max(inimigo.vida - dano_real, 0)
+        print(f"{self.nome} atacou {inimigo.nome} causando {dano_real} de dano! Vida restante: {inimigo.vida}\n")
+
+class Monstro:
+    ...
+    def atacar(self, inimigo):
+        dano_bruto = random.randint(self.ataque - 3, self.ataque + 3)
+        dano_real = max(dano_bruto - inimigo.defesa, 0)
+        if random.random() < 0.15:
+            dano_real = int(dano_real * 1.8)
+            print("⚡ POLLY CRÍTICA! ⚡")
+        inimigo.vida = max(inimigo.vida - dano_real, 0)
+        print(f"{self.nome} contra-ataca causando {dano_real} de dano! Vida restante: {inimigo.vida}\n")
+
+class Heroi:
+    ...
+    def equipar_item(self, item):
+        self.itens.append(item)
+        if isinstance(item, Arma):
+            self.ataque += item.bonus_ataque
+        elif isinstance(item, Armadura):
+            self.defesa += item.defesa
 
        

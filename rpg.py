@@ -31,9 +31,9 @@ def batalha(heroi, monstro):
     print(f"\n {heroi.nome} vs {monstro.nome} ")
 
     while heroi.esta_vivo() and monstro.esta_vivo():
-        print("\nO que deseja fazer?")
+        print("\nO que você deseja fazer?")
         print("1 - Atacar")
-        print("2 - Usar Poção (+30 de vida)")
+        print("2 - Usar Poção Wiggenweld(+30 de vida)")
         escolha = input("Escolha: ")
 
         if escolha == "1":
@@ -85,7 +85,7 @@ def main():
             harry.inventario.append(pocao)
             harry.equipar_item(espada)
             harry.equipar_item(escudo)
-            print(f"{harry.nome} equipou {espada.nome} e {escudo.nome}!")
+            print(f"{harry.nome} equipou {espada.nome} e usou{escudo.nome}")
 
             print("\n--- PRIMEIRA BATALHA: DEMENTADOR ---")
             batalha(harry, dementador)
@@ -98,7 +98,7 @@ def main():
             if harry.esta_vivo():
                 print("Parabéns! Você derrotou todos os inimigos e salvou Hogwarts!")
             else:
-                print("Você foi derrotado... ")
+                print("Você foi derrotado...")
 
         elif opcao == "2":
             print("Saindo do jogo...")

@@ -115,7 +115,7 @@ def slowprint(text, delay=0.03):
 
 def introducao():
     slowprint("Bem-vindo ao reino de Hogwarts!\n")
-    slowprint("Um lugar onde heróis nascem e monstros espreitam nas sombras.\n")
+    slowprint("Um lugar onde guerreiros nascem e monstros espreitam nas sombras.\n")
     slowprint("Você é Arthur, um jovem guerreiro, destinado a salvar o reino das forças do mal.\n")
     slowprint("Sua jornada começa agora...\n")
 

@@ -6,26 +6,26 @@ from personagens.monstro import Monstro
 
 
 # Criando personagens
-heroi = Heroi("Arthur", 100, 15, 5)
-goblin = Monstro("Goblin", 30, 8, 2, "Pequeno")
-dragao = Monstro("Dragão", 200, 30, 10, "Grande")
+heroi = Heroi("helen", 100, 15, 5)
+goblin = Monstro("julia", 30, 8, 2, "Pequeno")
+dragao = Monstro("carol", 50, 30, 10, "medio")
 
 # Criando itens
-espada = Arma("Espada Longa", "Uma espada afiada.", 10)
-escudo = Armadura("Escudo de Ferro", "Um escudo resistente.", 5)
-pocao_vida = Item("Poção de Vida", "Restaura 30 de vida.")
+esmalte = Arma("Esmalte", "cor vermelha.", 10)
+acetona = Armadura("acetona", "Um escudo rdo esmalte.", 5)
+pocao_vida = Item("Poção de Vida", "Restaura do esmalte")
 
-print("--- Início da Aventura ---")
+print("--- Início da Aventura ---") 
 
 # Herói encontra um item
-heroi.inventario.append(espada)
-heroi.inventario.append(escudo)
-heroi.inventario.append(pocao_vida)
-print(f"{heroi.nome} encontrou uma {espada.nome}, um {escudo.nome} e uma {pocao_vida.nome}.")
+heroi.inventario.append(esmalte)
+heroi.inventario.append(acetona)
+heroi.inventerio.append(pocao_vida)
+print(f"{heroi.nome} encontrou uma {esmalte.nome}, um {acetona.nome} e uma {pocao_vida.nome}.")
 
 # Herói equipa itens
-heroi.equipar_item(espada)
-heroi.equipar_item(escudo)
+heroi.equipar_item(esmalte)
+heroi.equipar_item(acetona)
 
 print("\n--- Batalha contra o Goblin ---")
 while heroi.esta_vivo() and goblin.esta_vivo():

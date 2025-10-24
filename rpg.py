@@ -22,3 +22,10 @@ def menu_principal():
     3. Sair
     """)
     return input("Escolha uma opção: ")
+
+def sobre():
+    print("""
+     Jogo de RPG de texto - Tema: Dragões
+    Desenvolvido em Python com orientação a objetos.
+    Explore o reino e enfrente o poderoso Dragão Ancião!
+    """)

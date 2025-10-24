@@ -174,4 +174,21 @@ def iniciar_aventura():
         else:
             print("Opção inválida!")
 
+def main():
+    while True:
+        escolha = menu_principal()
+        if escolha == "1":
+            iniciar_aventura()
+        elif escolha == "2":
+            print("👋 Saindo do mundo fashion... até logo!")
+            break
+        elif escolha == "3":
+            menu_introducao()
+        else:
+            print("Opção inválida!\n")
+
+if __name__ == "__main__":
+    main()
+          
+
      

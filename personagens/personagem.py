@@ -6,9 +6,14 @@ class Personagem:
         self.defesa = defesa
 
     def atacar(self, alvo):
-        dano = max(0, self.ataque - alvo.defesa)
+        # Interpreta `defesa` do alvo como porcentagem de redução de dano.
+        # Ex.: defesa = 10  -> 10% de redução. Capamos em 95% para evitar dano zero constante.
+        base = self.ataque
+        defesa_pct = getattr(alvo, 'defesa', 0) / 100.0
+        defesa_pct = min(0.95, max(0.0, defesa_pct))
+        dano = int(max(0, base * (1.0 - defesa_pct)))
         alvo.receber_dano(dano)
-        print(f"{self.nome} atacou {alvo.nome} causando {dano} de dano.")
+        print(f"{self.nome} atacou {alvo.nome} causando {dano} de dano (base {base}, defesa {int(defesa_pct*100)}%).")
 
     def receber_dano(self, dano):
         self.vida -= dano

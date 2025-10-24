@@ -7,10 +7,10 @@ from personagens.monstro import Monstro
 
 
 # Criando personagens
-heroi = Heroi("Scarlat, a Guardiã das Runas", 120, 18, 6)
-dragão = Monstro("Dragão", 40, 10, 3, "Médio")
-mago = Monstro("Mago", 80, 15, 4, "Grande")
-senhor_gelado = Monstro("Senhor gelado", 250, 28, 12, "Chefe Final")
+heroi = Heroi("Scarlat, a Guardiã das Runas", 230, 18, 6)
+dragão = Monstro("Dragão", 90, 10, 3, "Médio")
+mago = Monstro("Mago", 130, 15, 4, "Grande")
+senhor_gelado = Monstro("Senhor gelado", 450, 28, 12, "Chefe Final")
 
 # Criando itens
 espada_runas = Arma("Espada das Runas", "Uma espada antiga que brilha com energia mágica.", 12)

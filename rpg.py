@@ -7,7 +7,7 @@ from personagens.monstro import Monstro
 
 
 # Criando personagens
-heroi = Heroi("Lina, a Guardiã das Runas", 120, 18, 6)
+heroi = Heroi("Scarlat, a Guardiã das Runas", 120, 18, 6)
 lobo_sombrio = Monstro("Lobo Sombrio", 40, 10, 3, "Médio")
 feiticeiro = Monstro("Feiticeiro das Sombras", 80, 15, 4, "Grande")
 senhor_abismo = Monstro("Senhor do Abismo", 250, 28, 12, "Chefe Final")

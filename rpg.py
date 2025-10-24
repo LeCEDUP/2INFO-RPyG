@@ -5,8 +5,8 @@ from personagens.heroi import Heroi
 from personagens.monstro import Monstro
 
 heroi = Heroi("frederich, o Guardião", 120, 18, 7)
-orc = Monstro("Orc das Montanhas", 60, 10, 4, "Médio")
-feiticeiro = Monstro("Feiticeiro Sombrio", 100, 15, 5, "Grande")
+orc = Monstro("Orc do Itinga", 60, 10, 4, "Médio")
+feiticeiro = Monstro("Feiticeiro cedupense", 100, 15, 5, "Grande")
 dragao = Monstro("Dragão místico", 250, 35, 12, "Gigante")
 
 espada_sagrada = Arma("Espada Sagrada", "Uma espada sagrada feita por anjos.", 12)
@@ -23,7 +23,7 @@ print(f"{heroi.nome} encontrou uma {espada_sagrada.nome}, um {armadura_de_diaman
 heroi.equipar_item(espada_sagrada)
 heroi.equipar_item(armadura_de_diamante)
 
-print("\n  Batalha contra o Orc das Montanhas!")
+print("\n  Batalha contra o Orc do Itinga!")
 while heroi.esta_vivo() and orc.esta_vivo():
     heroi.atacar(orc)
     if orc.esta_vivo():
@@ -33,7 +33,7 @@ if heroi.esta_vivo():
     print(f"{heroi.nome} derrotou o {orc.nome}!")
     heroi.ganhar_experiencia(50)
 
-print("\n  Encontro com o Feiticeiro Sombrio!")
+print("\n  Encontro com o Feiticeiro cedupense!")
 while heroi.esta_vivo() and feiticeiro.esta_vivo():
     heroi.atacar(feiticeiro)
     if feiticeiro.esta_vivo():

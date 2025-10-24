@@ -41,7 +41,7 @@ while heroi.esta_vivo() and lobo_sombrio.esta_vivo():
 
 if heroi.esta_vivo():
     print(f"{heroi.nome} derrotou o {lobo_sombrio.nome}!")
-    heroi.ganhar_experiencia(40)
+    heroi.ganhar_experiencia(50)
     print(f"Vida de {heroi.nome}: {heroi.vida}")
     print(f"Inventário: {[item.nome for item in heroi.inventario]}")
 
@@ -53,14 +53,14 @@ while heroi.esta_vivo() and feiticeiro.esta_vivo():
 
 if heroi.esta_vivo():
     print(f"{heroi.nome} venceu o {feiticeiro.nome} e sente o poder crescer dentro de si!")
-    heroi.ganhar_experiencia(80)
+    heroi.ganhar_experiencia(100)
 else:
     print(f"{heroi.nome} foi derrotada nas catacumbas. O mal prevalece...")
     exit()
 
 print("\n--- Scarlat usa a Poção de Luz antes da batalha final ---")
 if pocao_luz in heroi.inventario:
-    heroi.vida += 40
+    heroi.vida += 60
     heroi.inventario.remove(pocao_luz)
     print(f"{heroi.nome} usou {pocao_luz.nome}. Vida atual: {heroi.vida}")
 
@@ -73,7 +73,7 @@ while heroi.esta_vivo() and senhor_abismo.esta_vivo():
 if heroi.esta_vivo():
     print(f"\nCom um último golpe de luz, {heroi.nome} derrota o {senhor_abismo.nome}!")
     print("As trevas recuam, e o selo das Runas se restaura.")
-    heroi.ganhar_experiencia(200)
+    heroi.ganhar_experiencia(80)
     print("\nO reino está salvo, e o nome de Lina ecoará nas lendas de Eldoria.")
 else:
     print(f"\n{heroi.nome} caiu diante do {senhor_abismo.nome}...")

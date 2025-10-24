@@ -56,3 +56,7 @@ def sobre():
     vida_heroi = 100
     dano_heroi = int(input("Defina o dano base do herói: "))
     ataques_heroi = int(input("Quantos ataques o herói pode fazer por turno? "))
+
+     ataques_dragao = 1 
+    heroi = Heroi(nome, vida_heroi, dano_heroi, 5)
+    dragao = Monstro("Dragão Ancião", 200, 20, 10, tipo="Dragão") 

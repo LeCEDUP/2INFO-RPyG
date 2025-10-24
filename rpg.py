@@ -39,13 +39,13 @@ def introducao():
 def escolher_personagem():
     print("1 - Barbie (Ataques de Glitter)")
     print("2 - Draculaura (Ataques Sombrio)")
-    escolha = input("\nQuem você quer ser? (1 ou 2): ")
+    escolha = input("\nVocê quer continuar com o mundo rosa? (1 ou 2): ")
 
     if escolha == "1":
         jogador = Personagem("Barbie", 100, 20)
-        inimigo = Personagem("Draculaura", 100, 18)
+        inimigo = Personagem("Draculaura", 100, 20)
     else:
-        jogador = Personagem("Draculaura", 100, 18)
+        jogador = Personagem("Draculaura", 100, 20)
         inimigo = Personagem("Barbie", 100, 20)
 
     print(f"\nVocê escolheu {jogador.nome}! Que comece o brilho...! \n")

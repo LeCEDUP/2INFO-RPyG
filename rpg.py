@@ -50,3 +50,9 @@ def sobre():
                 return
 
         print(f"\n {heroi.nome}: {heroi.vida} de vida |  {inimigo.nome}: {inimigo.vida} de vida")
+
+        def iniciar_aventura():
+    nome = input("Qual é o nome do seu herói? ")
+    vida_heroi = 100
+    dano_heroi = int(input("Defina o dano base do herói: "))
+    ataques_heroi = int(input("Quantos ataques o herói pode fazer por turno? "))

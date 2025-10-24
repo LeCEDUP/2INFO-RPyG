@@ -86,7 +86,7 @@ def batalha(jogador, inimigo):
     if jogador.esta_vivo():
         print(f"\n {jogador.nome} venceu e agora domina o Mundo Rosa! ")
     else:
-        print(f"\n {inimigo.nome} venceu... O rosa agora é sombrio, mas com seu toque rosa . ")
+        print(f"\n {inimigo.nome} venceu... O rosa agora é sombrio. ")
 
 
 

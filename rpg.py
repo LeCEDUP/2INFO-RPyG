@@ -9,7 +9,7 @@ orc = Monstro("Orc das Montanhas", 60, 10, 4, "Médio")
 feiticeiro = Monstro("Feiticeiro Sombrio", 100, 15, 5, "Grande")
 dragao = Monstro("Dragão Ancião", 250, 35, 12, "Gigante")
 
-espada_sagrada = Arma("Espada Sagrada", "Uma lâmina reluzente forjada por anjos.", 12)
+espada_sagrada = Arma("Espada Sagrada", "Uma espada sagrada feita por anjos.", 12)
 armadura_de_ouro = Armadura("Armadura de Ouro", "Protege contra ataques mágicos e físicos.", 8)
 pocao_vida = Item("Poção de Vida", "Restaura 40 pontos de vida.")
 

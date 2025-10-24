@@ -13,7 +13,7 @@ espada_sagrada = Arma("Espada Sagrada", "Uma lâmina reluzente forjada por anjos
 armadura_de_ouro = Armadura("Armadura de Ouro", "Protege contra ataques mágicos e físicos.", 8)
 pocao_vida = Item("Poção de Vida", "Restaura 40 pontos de vida.")
 
-print("--- 🌟 Início da Aventura de Luna ---")
+print("---  Início da Aventura de Luna ---")
 
 heroi.inventario.append(espada_sagrada)
 heroi.inventario.append(armadura_de_ouro)
@@ -23,7 +23,7 @@ print(f"{heroi.nome} encontrou uma {espada_sagrada.nome}, um {armadura_de_ouro.n
 heroi.equipar_item(espada_sagrada)
 heroi.equipar_item(armadura_de_ouro)
 
-print("\n⚔️  Batalha contra o Orc das Montanhas!")
+print("\n  Batalha contra o Orc das Montanhas!")
 while heroi.esta_vivo() and orc.esta_vivo():
     heroi.atacar(orc)
     if orc.esta_vivo():
@@ -33,7 +33,7 @@ if heroi.esta_vivo():
     print(f"{heroi.nome} derrotou o {orc.nome}!")
     heroi.ganhar_experiencia(50)
 
-print("\n🔥  Encontro com o Feiticeiro Sombrio!")
+print("\n  Encontro com o Feiticeiro Sombrio!")
 while heroi.esta_vivo() and feiticeiro.esta_vivo():
     heroi.atacar(feiticeiro)
     if feiticeiro.esta_vivo():
@@ -43,22 +43,22 @@ if heroi.esta_vivo():
     print(f"{heroi.nome} venceu o {feiticeiro.nome} e sente-se mais forte!")
     heroi.ganhar_experiencia(100)
 
-print("\n💧  Luna usa uma poção para se curar.")
+print("\n Luna usa uma poção para se curar.")
 if pocao_vida in heroi.inventario:
     heroi.vida += 40
     heroi.inventario.remove(pocao_vida)
     print(f"{heroi.nome} usou {pocao_vida.nome}. Vida atual: {heroi.vida}")
 
-print("\n🐲  Batalha Final contra o Dragão Ancião!")
+print("\n  Batalha Final contra o Dragão Ancião!")
 while heroi.esta_vivo() and dragao.esta_vivo():
     heroi.atacar(dragao)
     if dragao.esta_vivo():
         dragao.atacar(heroi)
 
 if heroi.esta_vivo():
-    print(f"\n🏆  Parabéns, {heroi.nome}! Você derrotou o {dragao.nome} e trouxe paz ao reino!")
+    print(f"\n  Parabéns, {heroi.nome}! Você derrotou o {dragao.nome} e trouxe paz ao reino!")
     heroi.ganhar_experiencia(300)
 else:
     print(f"\n💀  {heroi.nome} foi derrotada pelo {dragao.nome}... O reino sucumbiu às chamas.")
 
-print("\n--- 🌙 Fim da Aventura ---")
+print("\n---  Fim da Aventura ---")

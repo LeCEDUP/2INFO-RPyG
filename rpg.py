@@ -33,7 +33,7 @@ itens = [
     Item("Gloss Energizante", "Restaura 20 de vida")
 ]
 
-print(" Bem-vindo ao RPG Cosmético Interativo ---")
+print(" Bem-vindo ao RPG Cosmético Interativo")
 
 print("\nEscolha seu personagem:")
 for i, p in enumerate(personagens):
@@ -104,4 +104,6 @@ for inimigo in inimigos:
     else:
         print(f"\n{heroi.nome} foi derrotado por {inimigo.nome}. Fim de jogo.")
         break
+
+    print("Fim da Aventura Cosmética!")
       

@@ -19,3 +19,10 @@ def menu_principal():
     print("1 - Iniciar Jogo")
     print("2 - Sair")
     return input("Escolha uma opção: ")
+
+def monstro_atacar(monstro, heroi):
+    dano = random.randint(monstro.ataque - 5, monstro.ataque + 5) - heroi.defesa
+    if dano < 0:
+        dano = 0
+    heroi.vida -= dano
+    print(f"{monstro.nome} atacou {heroi.nome} causando {dano} de dano!")

@@ -7,7 +7,7 @@ from personagens.monstro import Monstro
 heroi = Heroi("frederich, o Guardião", 120, 18, 7)
 orc = Monstro("Orc das Montanhas", 60, 10, 4, "Médio")
 feiticeiro = Monstro("Feiticeiro Sombrio", 100, 15, 5, "Grande")
-dragao = Monstro("Dragão Ancião", 250, 35, 12, "Gigante")
+dragao = Monstro("Dragão místico", 250, 35, 12, "Gigante")
 
 espada_sagrada = Arma("Espada Sagrada", "Uma espada sagrada feita por anjos.", 12)
 armadura_de_ouro = Armadura("Armadura de Ouro", "Protege contra ataques mágicos e físicos.", 8)
@@ -49,7 +49,7 @@ if pocao_vida in heroi.inventario:
     heroi.inventario.remove(pocao_vida)
     print(f"{heroi.nome} usou {pocao_vida.nome}. Vida atual: {heroi.vida}")
 
-print("\n  Batalha Final contra o Dragão Ancião!")
+print("\n  Batalha Final contra o Dragão Místico!")
 while heroi.esta_vivo() and dragao.esta_vivo():
     heroi.atacar(dragao)
     if dragao.esta_vivo():

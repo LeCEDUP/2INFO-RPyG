@@ -1,6 +1,7 @@
 from .personagem import Personagem
 from itens.arma import Arma
 from itens.armadura import Armadura
+from itens.pocao import Pocao
 
 class Heroi(Personagem):
     def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None):
@@ -25,7 +26,9 @@ class Heroi(Personagem):
 
     def equipar_item(self, item):
         if item in self.inventario:
-            if isinstance(item, Arma):
+            if isinstance(item, Pocao):
+                print(f"{self.nome} equipou {item.nome}.")
+            elif isinstance(item, Arma):
                 self.ataque += item.bonus_ataque
                 print(f"{self.nome} equipou {item.nome}. Ataque atual: {self.ataque}")
             elif isinstance(item, Armadura):

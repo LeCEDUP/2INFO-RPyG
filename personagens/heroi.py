@@ -1,5 +1,5 @@
 from .personagem import Personagem
-from itens.arma import Arma
+from itens.arma import Varinha
 from itens.armadura import Armadura
 
 class Bruxo(Personagem):
@@ -25,7 +25,7 @@ class Bruxo(Personagem):
 
     def equipar_item(self, item):
         if item in self.inventario:
-            if isinstance(item, Arma):
+            if isinstance(item, Varinha):
                 self.ataque += item.bonus_ataque
                 print(f"{self.nome} equipou {item.nome}. Ataque atual: {self.ataque}")
             elif isinstance(item, Armadura):

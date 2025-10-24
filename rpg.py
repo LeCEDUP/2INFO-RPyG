@@ -64,3 +64,47 @@ def batalha(heroi, monstro):
             if heroi.vida <= 0:
                 print(f"{heroi.nome} foi derrotado!")
                 break
+
+def main():
+    introducao()
+
+    while True:
+        opcao = menu_principal()
+        if opcao == "1":
+  
+            espada = Arma("Varinha", "Uma varinha que é diferente pra cada bruxo.", 10)
+            escudo = Armadura("Protego", "Um feitiço que gera escudo resistente.", 5)
+            pocao = Item("Poção Wiggenweld", "Restaura 30 de vida.")
+
+            harry = Heroi("Harry Potter", 100, 28, 10)
+            dementador = Monstro("Dementador", 75, 25, 5, "Pequeno")
+            voldemort = Monstro("Voldemort", 120, 30, 12, "Grande")
+
+            harry.inventario.append(espada)
+            harry.inventario.append(escudo)
+            harry.inventario.append(pocao)
+            harry.equipar_item(espada)
+            harry.equipar_item(escudo)
+            print(f"{harry.nome} equipou {espada.nome} e {escudo.nome}!")
+
+            print("\n--- PRIMEIRA BATALHA: DEMENTADOR ---")
+            batalha(harry, dementador)
+
+            if harry.esta_vivo():
+  
+                print("\n--- DESAFIO FINAL: VOLDEMORT ---")
+                batalha(harry, voldemort)
+
+            if harry.esta_vivo():
+                print("Parabéns! Você derrotou todos os inimigos e salvou Hogwarts!")
+            else:
+                print("Você foi derrotado... ")
+
+        elif opcao == "2":
+            print("Saindo do jogo...")
+            break
+        else:
+            print("Opção inválida! Tente novamente.")
+
+if __name__ == "__main__":
+    main()

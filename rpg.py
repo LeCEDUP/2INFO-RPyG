@@ -157,7 +157,7 @@ def escolher_pocao(heroi):
             pocao = item
             break
     if not pocao:
-        print("Você não tem poções para usar.")
+        print("Não há poções para usar.")
         return None
     return pocao
 

@@ -6,10 +6,8 @@ from itens.armadura import Armadura
 import random
 import sys
 
-# Instâncias do jogo (definidas para serem usadas no runner)
 heroi = Heroi("A Fera", 120, 18, 6)
 
-# Monstros com valor de experiência específico (XP dado ao serem derrotados)
 Esqueleto = Monstro("Esqueleto", 40, 10, 0, "Morto vivo", experiencia=12)
 Soldado_Morto = Monstro("Soldado Morto", 50, 15, 10, "Morto vivo", experiencia=20)
 Bau_vivo = Monstro("Baú vivo", 30, 30, 5, "Mimico", experiencia=15)
@@ -22,8 +20,6 @@ Aberracao = Monstro("Aberração", 200, 50, 40, "Morto vivo", experiencia=300)
 MONSTROS = [Esqueleto, Soldado_Morto, Bau_vivo, Cavaleiro_Morto, Ogro, Goblin, Aranha_Gigante,
             Mago_Negro, Aberracao]
 
-# Fases do jogo: cada fase contém os tipos de inimigos que podem aparecer nessa fase.
-# A última fase contém apenas 'Aberração' como chefão final.
 PHASES = [
     [Goblin, Esqueleto],
     [Aranha_Gigante, Ogro, Soldado_Morto],
@@ -31,10 +27,9 @@ PHASES = [
     [Aberracao],
 ]
 
-# estado de progressão de fases
 CURRENT_PHASE = 0
 DEFEATS_IN_PHASE = 0
-DEFEATS_REQUIRED = 3  # derrotas necessárias para avançar de fase (exceto fase final)
+DEFEATS_REQUIRED = 3 
 
 Carne = Item("Carne", "Restaura 10 de vida")
 Carne_Podre = Item("Carne Podre", "Restaura 5 de vida")
@@ -61,7 +56,7 @@ def imprimir_status():
     print(f"Ataque: {heroi.ataque}")
     print(f"Defesa: {heroi.defesa}")
     print(f"Nível: {getattr(heroi, 'nivel', '?')}")
-    # mostrar experiência e quanto falta para o próximo nível, se disponível
+  
     if hasattr(heroi, 'experiencia'):
         faltam = heroi.experiencia_para_proximo_nivel()
         print(f"Experiência: {heroi.experiencia} (faltam {faltam} para o próximo nível)")
@@ -69,22 +64,22 @@ def imprimir_status():
     armadura_nome = heroi.armadura_equipada.nome if getattr(heroi, 'armadura_equipada', None) else 'Nenhuma'
     print(f"Arma equipada: {arma_nome} | Armadura equipada: {armadura_nome}")
     print(f"Inventário: {[item.nome for item in heroi.inventario]}")
-    # mostrar fase atual e progresso
+ 
     try:
         print(f"Fase atual: {CURRENT_PHASE + 1}/{len(PHASES)} - Derrotas nesta fase: {DEFEATS_IN_PHASE}/{DEFEATS_REQUIRED}")
     except Exception:
         pass
 
 
-# Tabelas de drop por fase — itens que podem surgir conforme as fases avançam
+
 DROPS_BY_PHASE = [
-    # fase 1: itens comuns
+    
     [Osso, Carne_Podre],
-    # fase 2: melhores recursos e armaduras pequenas
+    
     [Carne, Osso_Grande, Escudo],
-    # fase 3: armas melhores e pedras/armaduras médias
+    
     [Carne_Fresca, Espada, Pedra_Azul, Casco],
-    # fase 4 (chefão): raros e poderosos
+ 
     [Espada_dos_Mostros, Armadura_do_Quardiao, Machado_de_Guerra, Carne_Mostro, Pocao_Negra],
 ]
 
@@ -120,7 +115,7 @@ def usar_item(nome_item):
         print(f"{heroi.nome} usou {item.nome} e aumentou a defesa em +{ganho}.")
     else:
         print(f"{item.nome} não tem efeito implementado ainda.")
-    # remover item usado
+    
     try:
         heroi.inventario.remove(item)
     except ValueError:
@@ -128,20 +123,20 @@ def usar_item(nome_item):
 
 
 def encontro_aleatorio():
-    # escolhe um monstro dependendo da fase atual
+    
     global CURRENT_PHASE
     if CURRENT_PHASE >= len(PHASES):
         CURRENT_PHASE = len(PHASES) - 1
     opcoes = PHASES[CURRENT_PHASE]
     monstro = random.choice(opcoes)
-    # preserva o valor de experiência do monstro original ao instanciar o inimigo
+    
     inimigo = Monstro(monstro.nome, monstro.vida, monstro.ataque, monstro.defesa, monstro.tipo, experiencia=getattr(monstro, 'experiencia', 10))
     print(f"\nVocê encontrou um {inimigo.nome} ({inimigo.tipo}) na Fase {CURRENT_PHASE + 1}!")
     batalha(inimigo)
 
 
 def jogar_fora(nome_item):
-    # usa o método do herói para descartar (procura no inventário e nos slots)
+    
     success = heroi.descartar_item(nome_item)
     if success:
         print(f"Você jogou fora {nome_item}.")
@@ -150,8 +145,7 @@ def jogar_fora(nome_item):
 
 
 def batalha(inimigo):
-    # batalha principal: permite atacar, usar item ou tentar fugir
-    # se fugir do chefão final, o jogador recua para uma fase anterior para poder treinar
+   
     global CURRENT_PHASE, DEFEATS_IN_PHASE
     while heroi.esta_vivo() and inimigo.esta_vivo():
         print(f"\nSua vez: Vida {heroi.vida} | {inimigo.nome}: Vida {inimigo.vida}")
@@ -164,7 +158,7 @@ def batalha(inimigo):
         elif escolha in ('f', 'fugir'):
             if random.random() < 0.5:
                 print("Você conseguiu fugir!")
-                # se era o chefão final, recua uma fase para permitir enfrentar outros inimigos
+               
                 try:
                     inimigo_nome = (inimigo.nome or '').lower()
                 except Exception:
@@ -183,7 +177,6 @@ def batalha(inimigo):
             print("Ação inválida.")
             continue
 
-        # turno do inimigo
         if inimigo.esta_vivo():
             inimigo.atacar(heroi)
 
@@ -196,18 +189,18 @@ def batalha(inimigo):
                 drop = random.choice(choices)
                 heroi.inventario.append(drop)
                 print(f"Você encontrou: {drop.nome}.")
-        # conceder XP de acordo com o monstro derrotado
+     
         if hasattr(heroi, 'ganhar_experiencia') and hasattr(inimigo, 'experiencia'):
             heroi.ganhar_experiencia(inimigo.experiencia)
-        # aumentar contador de derrotas da fase e avançar quando necessário
+    
         DEFEATS_IN_PHASE += 1
-        # se derrotou o boss final (Aberração), declara vitória final
+   
         if inimigo.nome.lower() == 'aberração' or inimigo.nome.lower() == 'aberracao':
             print(f"\nParabéns! Você derrotou a {inimigo.nome}, o chefão final! O reino está salvo.")
             sys.exit(0)
 
         required = DEFEATS_REQUIRED
-        # avança de fase quando atingir o requerido
+     
         if DEFEATS_IN_PHASE >= required:
             DEFEATS_IN_PHASE = 0
             if CURRENT_PHASE < len(PHASES) - 1:
@@ -229,7 +222,7 @@ def mostrar_intro():
 
 def run_game():
     mostrar_intro()
-    # garantir que o herói tenha alguns itens iniciais
+   
     if not any(i.nome == 'Osso' for i in heroi.inventario):
         heroi.inventario.extend([Osso, Escudo, Carne])
 

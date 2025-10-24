@@ -5,25 +5,25 @@ from personagens.heroi import Heroi
 from personagens.monstro import Monstro
 
 
-# Criando personagens
+
 heroi = Heroi("Arthur", 100, 15, 5)
 goblin = Monstro("Goblin", 30, 8, 2, "Pequeno")
 dragao = Monstro("Dragão", 200, 30, 10, "Grande")
 
-# Criando itens
+
 espada = Arma("Espada Longa", "Uma espada afiada.", 10)
 escudo = Armadura("Escudo de Ferro", "Um escudo resistente.", 5)
 pocao_vida = Item("Poção de Vida", "Restaura 30 de vida.")
 
 print("--- Início da Aventura ---")
 
-# Herói encontra um item
+
 heroi.inventario.append(espada)
 heroi.inventario.append(escudo)
 heroi.inventario.append(pocao_vida)
 print(f"{heroi.nome} encontrou uma {espada.nome}, um {escudo.nome} e uma {pocao_vida.nome}.")
 
-# Herói equipa itens
+
 heroi.equipar_item(espada)
 heroi.equipar_item(escudo)
 

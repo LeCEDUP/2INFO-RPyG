@@ -47,7 +47,7 @@ def usar_item(nome_item):
         print(f"{heroi.nome} usou {item.nome} e aumentou a defesa em +{ganho}.")
     else:
         print(f"{item.nome} não tem efeito implementado ainda.")
-    # remover item usado
+  
     try:
         heroi.inventario.remove(item)
     except ValueError:
@@ -105,7 +105,7 @@ def mostrar_intro():
 
 def run_game():
     mostrar_intro()
-    # garantir que o herói tenha alguns itens iniciais
+   
     if not any(i.nome == 'Osso' for i in heroi.inventario):
         heroi.inventario.extend([Osso, Escudo, Carne])
 

@@ -5,23 +5,23 @@ from itens.armadura import Armadura
 
 class Heroi(Personagem):
     def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None, max_level=50):
-        # vida recebido é a vida máxima inicial
+        
         super().__init__(nome, vida, ataque, defesa)
         self.max_vida = vida
         self.vida = vida
         self.nivel = nivel
         self.experiencia = experiencia
         self.inventario = inventario if inventario is not None else []
-        # slots de equipamento
+      
         self.arma_equipada = None
         self.armadura_equipada = None
-        # limite máximo de nível (permite muitos níveis por padrão)
+        
         self.max_level = max_level
 
     def ganhar_experiencia(self, exp):
         self.experiencia += exp
         print(f"{self.nome} ganhou {exp} de experiência. Total: {self.experiencia}")
-        # processa múltiplos níveis caso XP acumulada seja suficiente
+     
         while self.nivel < self.max_level:
             need = self.experiencia_para_proximo_nivel()
             if self.experiencia >= need and need > 0:
@@ -35,10 +35,10 @@ class Heroi(Personagem):
             print(f"{self.nome} já atingiu o nível máximo ({self.max_level}).")
             return
         self.nivel += 1
-        # aumentar vida máxima e curar um pouco
+       
         self.max_vida += 20
         self.vida = min(self.max_vida, self.vida + 20)
-        # aumentar atributos com progressão leve por nível
+       
         self.ataque += 5
         self.defesa += 2
         print(f"{self.nome} subiu para o nível {self.nivel}! Seus atributos aumentaram.")
@@ -59,13 +59,13 @@ class Heroi(Personagem):
             return
 
         if isinstance(item, Arma):
-            # desequipar arma atual e devolver ao inventário
+          
             if self.arma_equipada is not None:
                 antiga = self.arma_equipada
                 self.ataque -= antiga.bonus_ataque
                 self.inventario.append(antiga)
                 print(f"{self.nome} desequipou {antiga.nome}.")
-            # equipar nova arma
+         
             self.arma_equipada = item
             self.ataque += item.bonus_ataque
             try:
@@ -117,7 +117,7 @@ class Heroi(Personagem):
                 return True
             except ValueError:
                 return False
-        # verificar equipamentos
+   
         if self.arma_equipada and self.arma_equipada.nome.lower() == nome_item.lower():
             antiga = self.arma_equipada
             self.ataque -= antiga.bonus_ataque
@@ -139,7 +139,7 @@ class Heroi(Personagem):
         Assunção: cada nível além do nível 1 concede +5% de dano permanente.
         O cálculo aplica o multiplicador sobre o ataque atual (que inclui bônus de armas).
         """
-        # multiplicador por nível (nível 1 -> 0% extra)
+       
         multiplicador = 1.0 + 0.05 * (self.nivel - 1)
         dano_bruto = int(self.ataque * multiplicador)
         defesa_pct = getattr(alvo, 'defesa', 0) / 100.0

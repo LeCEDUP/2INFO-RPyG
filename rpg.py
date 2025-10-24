@@ -69,3 +69,19 @@ def sobre():
 
     batalha(heroi, dragao, ataques_heroi, ataques_dragao)
 
+def main():
+    introducao()
+    while True:
+        escolha = menu_principal()
+        if escolha == "1":
+            iniciar_aventura()
+        elif escolha == "2":
+            sobre()
+        elif escolha == "3":
+            print("Até mais, bravo aventureiro! ")
+            break
+        else:
+            print("Opção inválida, tente novamente.")
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,6 @@
-from .item import Item
+from itens.item import Item
 
 class Armadura(Item):
-    def __init__(self, nome, descricao, bonus_defesa):
-        super().__init__(nome, descricao)
-        self.bonus_defesa = bonus_defesa
+    def __init__(self, nome, defesa):
+        super().__init__(nome)
+        self.defesa = defesa

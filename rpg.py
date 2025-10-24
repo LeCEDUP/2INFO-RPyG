@@ -32,3 +32,21 @@ itens = [
     Item("Máscara Facial", "Restaura 30 de vida"),
     Item("Gloss Energizante", "Restaura 20 de vida")
 ]
+
+print(" Bem-vindo ao RPG Cosmético Interativo ---")
+
+print("\nEscolha seu personagem:")
+for i, p in enumerate(personagens):
+    print(f"{i+1}. {p.nome} (Vida: {p.vida}, Ataque: {p.ataque}, Defesa: {p.defesa})")
+
+escolha = int(input("Digite o número do personagem que deseja jogar: ")) - 1
+heroi = personagens[escolha]
+
+
+heroi.inventario.append(poderes[0])
+heroi.inventario.append(armaduras[0])
+heroi.inventario.append(itens[0])
+heroi.equipar_item(poderes[0])
+heroi.equipar_item(armaduras[0])
+
+print(f"\nVocê escolheu {heroi.nome}!\n")

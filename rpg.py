@@ -8,9 +8,9 @@ from personagens.monstro import Monstro
 
 # Criando personagens
 heroi = Heroi("Scarlat, a Guardiã das Runas", 120, 18, 6)
-lobo_sombrio = Monstro("Lobo Sombrio", 40, 10, 3, "Médio")
-feiticeiro = Monstro("Feiticeiro das Sombras", 80, 15, 4, "Grande")
-senhor_abismo = Monstro("Senhor do Abismo", 250, 28, 12, "Chefe Final")
+dragão = Monstro("dragão", 40, 10, 3, "Médio")
+mago = Monstro("mago", 80, 15, 4, "Grande")
+senhor_gelado = Monstro("Senhor gelado", 250, 28, 12, "Chefe Final")
 
 # Criando itens
 cajado_runas = Arma("Cajado das Runas", "Um cajado antigo que brilha com energia mágica.", 12)
@@ -34,25 +34,25 @@ heroi.equipar_item(cajado_runas)
 heroi.equipar_item(manto_lunar)
 
 print("\n--- Batalha nas Florestas Antigas (Lobo Sombrio) ---")
-while heroi.esta_vivo() and lobo_sombrio.esta_vivo():
-    heroi.atacar(lobo_sombrio)
-    if lobo_sombrio.esta_vivo():
-        lobo_sombrio.atacar(heroi)
+while heroi.esta_vivo() and dragão.esta_vivo():
+    heroi.atacar(dragão)
+    if dragão.esta_vivo():
+        dragão.atacar(heroi)
 
 if heroi.esta_vivo():
-    print(f"{heroi.nome} derrotou o {lobo_sombrio.nome}!")
+    print(f"{heroi.nome} derrotou o {dragão.nome}!")
     heroi.ganhar_experiencia(50)
     print(f"Vida de {heroi.nome}: {heroi.vida}")
     print(f"Inventário: {[item.nome for item in heroi.inventario]}")
 
-print("\n--- Encontro nas Catacumbas (Feiticeiro das Sombras) ---")
-while heroi.esta_vivo() and feiticeiro.esta_vivo():
-    heroi.atacar(feiticeiro)
-    if feiticeiro.esta_vivo():
-        feiticeiro.atacar(heroi)
+print("\n--- Encontro nas Catacumbas (mago) ---")
+while heroi.esta_vivo() and mago.esta_vivo():
+    heroi.atacar(mago)
+    if mago.esta_vivo():
+        mago.atacar(heroi)
 
 if heroi.esta_vivo():
-    print(f"{heroi.nome} venceu o {feiticeiro.nome} e sente o poder crescer dentro de si!")
+    print(f"{heroi.nome} venceu o {mago.nome} e sente o poder crescer dentro de si!")
     heroi.ganhar_experiencia(100)
 else:
     print(f"{heroi.nome} foi derrotada nas catacumbas. O mal prevalece...")
@@ -65,18 +65,18 @@ if pocao_luz in heroi.inventario:
     print(f"{heroi.nome} usou {pocao_luz.nome}. Vida atual: {heroi.vida}")
 
 print("\n--- Batalha Final nas Ruínas de Eldoria ---")
-while heroi.esta_vivo() and senhor_abismo.esta_vivo():
-    heroi.atacar(senhor_abismo)
-    if senhor_abismo.esta_vivo():
-        senhor_abismo.atacar(heroi)
+while heroi.esta_vivo() and senhor_gelado.esta_vivo():
+    heroi.atacar(senhor_gelado)
+    if senhor_gelado.esta_vivo():
+        senhor_gelado.atacar(heroi)
 
 if heroi.esta_vivo():
-    print(f"\nCom um último golpe de luz, {heroi.nome} derrota o {senhor_abismo.nome}!")
+    print(f"\nCom um último golpe de luz, {heroi.nome} derrota o {senhor_gelado.nome}!")
     print("As trevas recuam, e o selo das Runas se restaura.")
-    heroi.ganhar_experiencia(80)
+    heroi.ganhar_experiencia(100)
     print("\nO reino está salvo, e o nome de Lina ecoará nas lendas de Eldoria.")
 else:
-    print(f"\n{heroi.nome} caiu diante do {senhor_abismo.nome}...")
+    print(f"\n{heroi.nome} caiu diante do {senhor_gelado.nome}...")
     print("As trevas engolem Eldoria, e a esperança desaparece.")
 
 print("\n--- Fim da Jornada ---")

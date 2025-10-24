@@ -97,5 +97,11 @@ for inimigo in inimigos:
 
         if inimigo.esta_vivo():
             inimigo.atacar(heroi)
-            
 
+    if heroi.esta_vivo():
+        print(f"\n{heroi.nome} derrotou {inimigo.nome}!\n")
+        heroi.ganhar_experiencia(50)
+    else:
+        print(f"\n{heroi.nome} foi derrotado por {inimigo.nome}. Fim de jogo.")
+        break
+      

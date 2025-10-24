@@ -60,3 +60,12 @@ def sobre():
      ataques_dragao = 1 
     heroi = Heroi(nome, vida_heroi, dano_heroi, 5)
     dragao = Monstro("Dragão Ancião", 200, 20, 10, tipo="Dragão") 
+
+     espada = Arma("Espada Dragonsword", "Forjada com fogo de dragão.", 10)
+    armadura = Armadura("Armadura de Escamas Vermelhas", "Protege contra fogo.", 8)
+
+    heroi.equipar_arma(espada)
+    heroi.equipar_armadura(armadura)
+
+    batalha(heroi, dragao, ataques_heroi, ataques_dragao)
+

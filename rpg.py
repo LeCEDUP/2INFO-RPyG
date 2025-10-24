@@ -134,4 +134,44 @@ def sortear_itens():
     ]
 
     return armas_possiveis, armaduras_possiveis, superpoderes_possiveis
+
+def iniciar_aventura():
+    nome = input("Qual é o nome da sua Barbie heroína? ")
+    barbie = Heroi(nome, 100, random.randint(14, 20), random.randint(5, 10))
+
+    armas, armaduras, poderes = sortear_itens()
+    armas_escolhidas = escolher_itens("armas", armas)
+    armaduras_escolhidas = escolher_itens("armaduras", armaduras)
+    poderes_escolhidos = escolher_itens("superpoderes", poderes)
+
+    for a in armas_escolhidas:
+        barbie.equipar_item(a)
+    for a in armaduras_escolhidas:
+        barbie.equipar_item(a)
+
+    polly = Monstro("Polly Pocket", random.randint(90, 110), random.randint(13, 20), random.randint(5, 10), "Fashion Rival")
+
+    print(f"\n✨ BATALHA COMEÇOU! ✨")
+    print(f"{barbie.nome} vs Polly Pocket\n")
+
+    while barbie.vida > 0 and polly.vida > 0:
+        print(f"{barbie.nome} HP: {barbie.vida} | Polly HP: {polly.vida}")
+        print("1 - Atacar\n2 - Fugir")
+        acao = input("Escolha sua ação: ")
+
+        if acao == "1":
+            barbie.atacar(polly)
+            if polly.vida <= 0:
+                print(f"✨ {barbie.nome} venceu com muito glamour! ✨")
+                break
+            polly.atacar(barbie)
+            if barbie.vida <= 0:
+                print(f"❌ {barbie.nome} perdeu o brilho... Polly dominou a passarela!")
+                break
+        elif acao == "2":
+            print(f"{barbie.nome} saiu da passarela com dignidade ✨")
+            break
+        else:
+            print("Opção inválida!")
+
      

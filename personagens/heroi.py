@@ -2,7 +2,7 @@ from .personagem import Personagem
 from itens.arma import Arma
 from itens.armadura import Armadura
 
-class Heroi(Personagem):
+class Bruxo(Personagem):
     def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None):
         super().__init__(nome, vida, ataque, defesa)
         self.nivel = nivel

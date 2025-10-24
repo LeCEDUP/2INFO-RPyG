@@ -202,11 +202,11 @@ def main():
     heroi = Heroi("Arthur", 100, 20, 10)
     
     # Criando itens iniciais
-    espada = Arma("Espada Longa", "Uma espada afiada.", 25)
-    faca = Arma("Faca Canivete", "Uma espada afiada.", 7)
-    escudoferro = Armadura("Escudo de Ferro", "Um escudo resistente.", 15)
-    escudodiamante = Armadura ("Escudo de Diamante", "Um escudo resistente.", 30)
-    pocao = Pocao("Poção de Vida", "Restaura 50 de vida.", 50)
+    espada = Arma("Espada Longa", "Uma espada afiada.", 30)
+    faca = Arma("Faca Canivete", "Uma espada afiada.", 10)
+    escudoferro = Armadura("Escudo de Ferro", "Um escudo resistente.", 20)
+    escudodiamante = Armadura ("Escudo de Diamante", "Um escudo resistente.", 35)
+    pocao = Pocao("Poção de Vida", "Restaura 50 de vida.", 75)
 
     # Adicionando itens ao inventário
     heroi.inventario.extend([espada, escudoferro,escudodiamante, pocao, faca])

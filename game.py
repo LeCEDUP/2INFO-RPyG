@@ -97,7 +97,7 @@ def batalha(inimigo):
 
 
 def mostrar_intro():
-    print("\n--- Prologue: A Sombra sobre Vale Antigo ---\n")
+    print("\n--- Prologo: A Sombra sobre Vale Antigo ---\n")
     print("As brumas cobriram o Vale Antigo. Antigas fortalezas ecoam com passos que não pertencem aos vivos.")
     print("Você é conhecido apenas como 'A Fera', um guerreiro marcado pelas cicatrizes do passado.")
     print("Sua missão: descobrir a origem da corrupção e salvar o que resta do reino. Sobreviva, evolua e escolha seu destino.")

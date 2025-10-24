@@ -19,7 +19,7 @@ pocao_luz = Item("Poção de Luz", "Restaura 40 de vida.")
 
 print("=== A LENDA DE ELDORIA ===\n")
 print("As ruínas de Eldoria foram esquecidas há séculos, até que uma força sombria começou a emergir.")
-print("Lina, a Guardiã das Runas, parte em uma jornada para selar o mal e restaurar o equilíbrio do reino.\n")
+print("Scarlat, a Guardiã das Runas, parte em uma jornada para selar o mal e restaurar o equilíbrio do reino.\n")
 
 print("--- Início da Jornada ---")
 
@@ -58,7 +58,7 @@ else:
     print(f"{heroi.nome} foi derrotada nas catacumbas. O mal prevalece...")
     exit()
 
-print("\n--- Lina usa a Poção de Luz antes da batalha final ---")
+print("\n--- Scarlat usa a Poção de Luz antes da batalha final ---")
 if pocao_luz in heroi.inventario:
     heroi.vida += 40
     heroi.inventario.remove(pocao_luz)

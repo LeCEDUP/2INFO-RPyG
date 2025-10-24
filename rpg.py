@@ -37,8 +37,8 @@ def introducao():
 
 # ESCOLHER PERSONAGEM
 def escolher_personagem():
-    print("1 - Barbie (Ataques de Glitter e Encanto)")
-    print("2 - Draculaura (Ataques Sombrio e Charme )")
+    print("1 - Barbie (Ataques de Glitter)")
+    print("2 - Draculaura (Ataques Sombrio)")
     escolha = input("\nQuem você quer ser? (1 ou 2): ")
 
     if escolha == "1":

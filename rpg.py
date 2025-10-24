@@ -256,12 +256,12 @@ def main():
                 heroi.inventario.remove(pocao)
 
         elif escolha == '5':
-            print("\nEscolha um monstro para lutar:")
-            print("1. Goblin (Pequeno)")
+            print("\nEscolha um monstro para enfrentar:")
+            print("1. Gnomo mal (Pequeno)")
             print("2. Dragão (Grande)")
             monstro_escolha = input("Escolha: ")
             if monstro_escolha == '1':
-                goblin = Monstro("Goblin", 30, 8, 2, "Pequeno")
+                goblin = Monstro("Gnomo mal", 30, 8, 2, "Pequeno")
                 venceu = luta(heroi, goblin)
                 if not venceu:
                     print("Você perdeu a batalha. Fim de jogo.")

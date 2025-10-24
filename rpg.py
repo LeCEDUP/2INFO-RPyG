@@ -13,3 +13,12 @@ def introducao():
     Você, um jovem guerreiro, é a última esperança do reino.
     Derrote o Dragão Ancião e restaure a paz!
     """)
+
+def menu_principal():
+    print("""
+     MENU PRINCIPAL 
+    1. Iniciar aventura
+    2. Sobre
+    3. Sair
+    """)
+    return input("Escolha uma opção: ")

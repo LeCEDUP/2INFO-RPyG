@@ -1,4 +1,4 @@
-from .protagonista import Personagem
+from .personagem import Personagem
 from itens.arma import Arma
 from itens.protecao import Armadura
 

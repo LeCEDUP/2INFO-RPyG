@@ -1,6 +1,9 @@
 from .item import Item
 
 class Arma(Item):
-    def __init__(self, nome, descricao, bonus_ataque):
+    def __init__(self, nome, dano, descricao=""):
+       
         super().__init__(nome, descricao)
-        self.bonus_ataque = bonus_ataque
+        
+       
+        self.dano = dano

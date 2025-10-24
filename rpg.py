@@ -73,3 +73,18 @@ if pocao_dano or pocao_vida in heroi.inventario:
         print(f"Você decide ir do jeito que está para a última batalha! Vida Atual: {heroi.vida} / Dano Atual: {heroi.ataque}")
     else: 
         print("Digite S de sim ou N de não!")
+
+print("Você sente que já está preparado para a batalha final, contra a própria encarnação da destruição, o DRAGÃO!")
+print("--- Batalha contra o Dragão (Desafio Final) ---")
+while heroi.esta_vivo() and dragao.esta_vivo():
+    heroi.atacar(dragao)
+    if dragao.esta_vivo():
+        dragao.atacar(heroi)
+
+if heroi.esta_vivo():
+    print(f"\nParabéns, {heroi.nome}! Você derrotou o {dragao.nome} e salvou o reino!")
+    heroi.ganhar_experiencia(200)
+else:
+    print(f"\n{heroi.nome} foi derrotado pelo {dragao.nome}. Fim de jogo.")
+
+print("\n--- Fim da Aventura ---")

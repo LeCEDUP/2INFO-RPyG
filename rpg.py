@@ -234,7 +234,7 @@ def main():
             mostrar_inventario(heroi)
 
         elif escolha == '3':
-            print("\nQue tipo de item quer equipar?")
+            print("\nQual item quer equipar?")
             print("1. Arma")
             print("2. Armadura")
             tipo = input("Escolha: ")

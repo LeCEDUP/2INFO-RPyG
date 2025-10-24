@@ -4,7 +4,7 @@ from itens.armadura import Armadura
 from personagens.heroi import Heroi
 from personagens.monstro import Monstro
 
-heroi = Heroi("Luna, a Guardiã", 120, 18, 7)
+heroi = Heroi("frederich, o Guardião", 120, 18, 7)
 orc = Monstro("Orc das Montanhas", 60, 10, 4, "Médio")
 feiticeiro = Monstro("Feiticeiro Sombrio", 100, 15, 5, "Grande")
 dragao = Monstro("Dragão Ancião", 250, 35, 12, "Gigante")
@@ -13,7 +13,7 @@ espada_sagrada = Arma("Espada Sagrada", "Uma espada sagrada feita por anjos.", 1
 armadura_de_ouro = Armadura("Armadura de Ouro", "Protege contra ataques mágicos e físicos.", 8)
 pocao_vida = Item("Poção de Vida", "Restaura 40 pontos de vida.")
 
-print("---  Início da Aventura de Luna ---")
+print("---  Início da Aventura de frederich ---")
 
 heroi.inventario.append(espada_sagrada)
 heroi.inventario.append(armadura_de_ouro)
@@ -43,7 +43,7 @@ if heroi.esta_vivo():
     print(f"{heroi.nome} venceu o {feiticeiro.nome} e sente-se mais forte!")
     heroi.ganhar_experiencia(100)
 
-print("\n Luna usa uma poção para se curar.")
+print("\n frederich usa uma poção para se curar.")
 if pocao_vida in heroi.inventario:
     heroi.vida += 40
     heroi.inventario.remove(pocao_vida)
@@ -59,6 +59,6 @@ if heroi.esta_vivo():
     print(f"\n  Parabéns, {heroi.nome}! Você derrotou o {dragao.nome} e trouxe paz ao reino!")
     heroi.ganhar_experiencia(300)
 else:
-    print(f"\n💀  {heroi.nome} foi derrotada pelo {dragao.nome}... O reino sucumbiu às chamas.")
+    print(f"\n  {heroi.nome} foi derrotada pelo {dragao.nome}... O reino sucumbiu às chamas.")
 
 print("\n---  Fim da Aventura ---")

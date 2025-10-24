@@ -8,7 +8,7 @@ class Personagem:
         self.defesa = defesa
         
     def atacar(self, alvo):
-        if random.randint(1, 5) == 1:
+        if random.randint(1, 30) == 1:
             print(f"{self.nome} errou o ataque no {alvo.nome}")
         else:
             if  random.randint(1, 15) == 1:

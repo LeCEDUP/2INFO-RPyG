@@ -63,4 +63,48 @@ class Heroi:
         elif isinstance(item, Armadura):
             self.defesa += item.defesa
 
+def menu_introducao():
+    while True:
+        print("\n===== INTRODUÇÃO INTERATIVA =====")
+        print("1 - Sobre o Jogo")
+        print("2 - Armaduras")
+        print("3 - Armas")
+        print("4 - Superpoderes")
+        print("5 - Voltar ao Menu Principal")
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == "1":
+            print("\n✨ SOBRE O JOGO ✨")
+            print("O mundo fashion está em perigo!")
+            print("Polly Pocket quer roubar o brilho da Barbie!")
+        elif escolha == "2":
+            print("\nARMADURAS DISPONÍVEIS: Vestido Brilhante, Casaco Fashion, Jaqueta Rosa de Poder...")
+        elif escolha == "3":
+            print("\nARMAS DISPONÍVEIS: Batom Laser, Secador Explosivo, Salto da Justiça...")
+        elif escolha == "4":
+            print("\nSUPERPODERES DISPONÍVEIS: Bola de Glitter, Invisibilidade Fashion...")
+        elif escolha == "5":
+            break
+        else:
+            print("Opção inválida!\n")
        
+def escolher_itens(nome_categoria, opcoes):
+    print(f"\nEscolha até 2 {nome_categoria}:")
+    for i, item in enumerate(opcoes, 1):
+        print(f"{i}. {item.nome if hasattr(item, 'nome') else item}")
+
+    escolhas = []
+    while len(escolhas) < 2:
+        escolha = input(f"Digite o número (Enter para parar): ")
+        if escolha == "":
+            break
+        if not escolha.isdigit() or int(escolha) not in range(1, len(opcoes) + 1):
+            print("Escolha inválida!")
+            continue
+        item = opcoes[int(escolha) - 1]
+        if item in escolhas:
+            print("Você já escolheu esse!")
+            continue
+        escolhas.append(item)
+    return escolhas
+      

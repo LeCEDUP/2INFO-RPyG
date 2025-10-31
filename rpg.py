@@ -17,3 +17,7 @@ print ("---Início da jornada---")
 heroi.inventario.append(espada)
 heroi.inventario.append(escudo)
 print(f"{heroi.nome} encontrou uma {espada.nome}, um {escudo.nome}.")
+
+heroi.equipar_item(espada)
+heroi.equipar_item(escudo)
+

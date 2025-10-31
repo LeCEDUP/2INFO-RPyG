@@ -7,8 +7,8 @@ class Personagem:
 
     def atacar(self, alvo):
         dano = max(0, self.ataque - alvo.defesa)
-        alvo.receber_dano(dano)
         print(f"{self.nome} atacou {alvo.nome} causando {dano} de dano.")
+        alvo.receber_dano(dano)
 
     def receber_dano(self, dano):
         self.vida -= dano

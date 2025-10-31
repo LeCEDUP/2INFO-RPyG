@@ -4,7 +4,7 @@ from itens.armadura import Armadura
 
 class Heroi(Personagem):
     herois = []
-    def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None):
+    def __init__(self, nome: str, vida: float, ataque: float, defesa: float, nivel=1, experiencia=0, inventario=None):
         super().__init__(nome, vida, ataque, defesa)
         self.nivel = nivel
         self.experiencia = experiencia

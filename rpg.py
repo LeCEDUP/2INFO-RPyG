@@ -195,9 +195,6 @@ while True:
                 pausa(1)
                 break
 
-            case '4':
-                break
-
             case _:
                 print("\n Escolha uma opção válida!")
     else:

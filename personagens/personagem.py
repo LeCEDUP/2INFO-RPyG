@@ -1,7 +1,7 @@
 import random
 
 class Personagem:
-    def __init__(self, nome, vida, ataque, defesa):
+    def __init__(self, nome: str, vida: float, ataque: float, defesa: float):
         self.nome = nome
         self.vida = vida
         self.ataque = ataque

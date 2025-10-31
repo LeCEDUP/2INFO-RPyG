@@ -11,3 +11,9 @@ Heroi = Heroi("Darwin", 100, 15, 5)
 
 espada = Arma("Espada Longa", "Uma espada afiada", 10)
 escudo = Armadura("Escudo de Ferro", "Um escudo resistente.", 5)
+
+print ("---Início da jornada---")
+
+heroi.inventario.append(espada)
+heroi.inventario.append(escudo)
+print(f"{heroi.nome} encontrou uma {espada.nome}, um {escudo.nome}.")

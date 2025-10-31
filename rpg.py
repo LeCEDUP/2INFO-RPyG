@@ -37,3 +37,16 @@ while contador < quantidade:
         print(f"Inventário de {heroi.nome}: {[item.nome for item in heroi.inventario]}")
         contador += 1
 
+       print("\n--- Batalha contra o Rei Esqueleto (Desafio Final) ---")
+       while heroi.esta_vivo() and rei_esqueleto.esta_vivo():
+          heroi.atacar(rei_esqueleto)
+          if rei_esqueleto.esta_vivo():
+          rei_esqueleto.atacar(heroi)
+
+     if heroi.esta_vivo():
+        print(f"\nParabéns, {heroi.nome}! Você derrotou o {rei_esqueleto.nome} e salvou o reino!")
+        heroi.ganhar_experiencia(200)
+     else:
+        print(f"\n{heroi.nome} foi derrotado pelo {rei_esqueleto.nome}. Fim de jogo.")
+
+print("\n--- Fim da Jornada ---")

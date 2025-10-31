@@ -21,3 +21,19 @@ print(f"{heroi.nome} encontrou uma {espada.nome}, um {escudo.nome}.")
 heroi.equipar_item(espada)
 heroi.equipar_item(escudo)
 
+lutas = input("Escolha quantas vezes você vai querer lutar contra os goblins menores")
+luta = 0 
+while contador < quantidade:
+    print("\n--- Batalha contra o Goblin ---")
+    while heroi.esta_vivo() and goblin.esta_vivo():
+        heroi.atacar(goblin)
+        if goblin.esta_vivo():
+            goblin.atacar(heroi)
+
+    if heroi.esta_vivo():
+        print(f"{heroi.nome} derrotou o {goblin.nome}!")
+        heroi.ganhar_experiencia(50)
+        print(f"Vida de {heroi.nome}: {heroi.vida}")
+        print(f"Inventário de {heroi.nome}: {[item.nome for item in heroi.inventario]}")
+        contador += 1
+

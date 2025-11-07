@@ -60,8 +60,14 @@ class Protagonista(Personagem):
     def __init__(self, nome, vida, ataque_base, defesa_base):
         super().__init__(nome, vida, ataque_base, defesa_base)
         self.arma_equipada = None
-    
+        self.armadura_equipada = None
+        
+        self.municao_pistola = 15
+        self.faca = Arma(nome="Faca de sobrevivencia", dano=6)
+
     def equipar_item(self, item):
+        
+    
         if isinstance(item, Arma):
             self.arma_equipada = item
             print(f"🛠️ {self.nome} equipou {item.nome}.")
@@ -80,8 +86,14 @@ class Inimigo(Personagem):
 def criar_instancia_item(nome):
     if nome == "Erva Verde":
         return Item(nome="Erva Verde", descricao="Restaura 25 de vida.", efeito_cura=25)
+    if nome == "Químico":
+        return Item(nome="Químico", descricao="Pode ser combinado com ervas.")
+    if nome == "Primeiros Socorros":
+        return Item(nome="Primeiros Socorros", descricao="Restaura 75 de vida.", efeito_cura=75)
+
+    return Item(nome, "Item genérico.")
     
-    return Item(nome, "Item genérico.") 
+     
 
 def menu_item_consumivel(protagonista):
     
@@ -126,29 +138,42 @@ def menu_item_consumivel(protagonista):
 
 
 def menu_combate(protagonista, inimigo):
-    
-    print("\n--- 🥊 Menu de Combate ---")
-    print(f"❤️ {protagonista.nome}: {protagonista.vida}/{protagonista.vida_maxima} HP | 🔪 {inimigo.nome}: {inimigo.vida}/{inimigo.vida_maxima} HP")
-    
-    print("[1] Atacar")
-    print("[2] Usar Item (Cura)")
-    
+
+    print("[1] Atacar (Pistola)") 
+    print(f"    (Dano: {protagonista.calcular_dano()}, Balas: {protagonista.municao_pistola})")
+    print("[2] Atacar (Faca)")
+    print(f"    (Dano: {protagonista.faca.dano})")
+    print("[3] Usar Item (Cura)")
+
     while True:
         acao = input("Escolha sua ação: ")
-        
-        if acao == '1':
-            protagonista.atacar(inimigo)
-            return True 
-        
-        elif acao == '2':
+
+        if acao == '1': 
+            if protagonista.municao_pistola > 0:
+                protagonista.municao_pistola -= 1
+                protagonista.atacar(inimigo) 
+                print(f" {protagonista.municao_pistola} balas restantes.")
+                return True
+            else:
+                print("❌ SEM MUNIÇÃO! Você precisa usar a faca ou fugir.")
+                time.sleep(1)
+                continue 
+        elif acao == '2': 
+            
+            dano_faca = protagonista.faca.dano
+            inimigo.receber_dano(dano_faca)
+            print(f"🔪 {protagonista.nome} ataca {inimigo.nome} com a faca, causando {dano_faca} de dano!")
+            print(f"❤️ Vida de {inimigo.nome}: {inimigo.vida}/{inimigo.vida_maxima}")
+            return True
+
+        elif acao == '3': 
             if menu_item_consumivel(protagonista):
                 return True 
             else:
                 continue 
-        
+
         else:
-            print("Opção inválida. Digite 1 ou 2.")
-            time.sleep(1)
+            print("Opção inválida. Digite 1, 2 ou 3.")
 
 
 def simular_combate(protagonista, inimigo):
@@ -188,7 +213,7 @@ def iniciar_jogo():
     protagonista = Protagonista("Ethan Winters", 100, 11, 8)
     protagonista.vida_maxima = 100
     
-    inimigo_basico = Inimigo("Lycan", 50, 8, 5)
+    inimigo_basico = Inimigo("Lycan", 50, 11, 5)
     inimigo_basico.vida_maxima = 50
     inimigo_chefe = Inimigo("Lady Dimitrescu", 140, 19, 5)
     inimigo_chefe.vida_maxima = 140

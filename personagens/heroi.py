@@ -1,8 +1,8 @@
 from .personagem import Personagem
-from itens.arma import Arma
+from itens.arma import Varinha
 from itens.armadura import Armadura
 
-class Heroi(Personagem):
+class Bruxo(Personagem):
     def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None):
         super().__init__(nome, vida, ataque, defesa)
         self.nivel = nivel
@@ -25,7 +25,7 @@ class Heroi(Personagem):
 
     def equipar_item(self, item):
         if item in self.inventario:
-            if isinstance(item, Arma):
+            if isinstance(item, Varinha):
                 self.ataque += item.bonus_ataque
                 print(f"{self.nome} equipou {item.nome}. Ataque atual: {self.ataque}")
             elif isinstance(item, Armadura):

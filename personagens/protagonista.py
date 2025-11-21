@@ -1,8 +1,8 @@
 from .personagem import Personagem
 from itens.arma import Arma
-from itens.armadura import Armadura
+from itens.protecao import Armadura
 
-class Heroi(Personagem):
+class Protagonista(Personagem):
     def __init__(self, nome, vida, ataque, defesa, nivel=1, experiencia=0, inventario=None):
         super().__init__(nome, vida, ataque, defesa)
         self.nivel = nivel
@@ -26,10 +26,10 @@ class Heroi(Personagem):
     def equipar_item(self, item):
         if item in self.inventario:
             if isinstance(item, Arma):
-                self.ataque += item.bonus_ataque
+                self.ataque += item.dano
                 print(f"{self.nome} equipou {item.nome}. Ataque atual: {self.ataque}")
             elif isinstance(item, Armadura):
-                self.defesa += item.bonus_defesa
+                self.defesa += item.defesa
                 print(f"{self.nome} equipou {item.nome}. Defesa atual: {self.defesa}")
             else:
                 print(f"{item.nome} não pode ser equipado.")
